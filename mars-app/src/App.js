@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getPhotos } from "./redux/actions";
+
+
 import './App.css';
 
 function App() {
+  const photos = useSelector((state) => state.photos);
+  const dispatch = useDispatch();
+   useEffect(() => {
+     dispatch(getPhotos());
+   }, []);
+
+  const photosList = () => {
+    // return photos.map(
+    //   (photo) => 
+    //   { <img alt={photo[0].img_src}/> } 
+    //   )
+    return <div>poop</div>  
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <photosList/>
     </div>
   );
 }
