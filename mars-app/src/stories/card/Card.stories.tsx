@@ -1,16 +1,21 @@
 import React, { FC } from "react";
-import App from "../../App";
-import Card, { CardProps } from '.';
+import Card, { CardProps } from ".";
 
 export default {
-  title: "Components/cards/Cards",
+  title: "Components/Card",
   component: Card,
 };
 
-const Template: FC<CardProps> = (args) => <Card {...args} />;
+export const mockData = {
+  title: "A Picture",
+  url: "https://picsum.photos/id/237/750/600",
+  copyright: "Joe",
+  explanation: "here is some text",
+};
 
-// export const CardLight = Template.bind({});
-// CardLight.args = {
+const Template: FC<CardProps> = args => <Card {...args}/> 
 
-//   styleType: "light",
-// };
+export const CardLight = Template.bind({});
+CardLight.args={
+    article: mockData
+};

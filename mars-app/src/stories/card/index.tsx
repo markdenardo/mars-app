@@ -1,42 +1,32 @@
-import React, {FC, useEffect, useState} from 'react'
+import React, { FC, useEffect, useState } from "react";
 import styles from "./Card.module.scss";
+import Api from "../../data/api";
 
 export interface CardProps {
-    className?: string;
-    //copyright means the author in the api
+  className?: string;
+  article: {
     copyright?: string;
-    date?: string;
     explanation: string;
-    hdurl?: string;
-    media_type?: string;
-    service_version?: string;
     title: string;
     url: string;
+  };
 }
 
 const Card: FC<CardProps> = ({
-    className,
-    copyright,
-    date,
-    explanation,
-    title,
-    url,
+  className, article
 }) => {
-
-return (
-  <div className="App">
-    <div className={styles.base}>
-      <h1 className={styles.title}>{title}</h1>
-      <img className={styles.img} src={url} />
-      <h2 className={styles.copyright}>{copyright}</h2>
-      <p className={styles.explanation}>{explanation}</p>
-      <button className={styles.button}>pic</button>
+  const { copyright, explanation, title, url } = article;
+  return (
+    <div className="App">
+      <div className={styles.base}>
+        <h1 className={styles.title}>{title}</h1>
+        <img className={styles.img} src={url} />
+        <h2 className={styles.copyright}>{copyright}</h2>
+        <p className={styles.explanation}>{explanation}</p>
+        <button className={styles.button}>pic</button>
+      </div>
     </div>
-  </div>
-);
-
-
-    
-}
+  );
+};
 
 export default Card;
