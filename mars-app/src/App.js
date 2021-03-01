@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addPhoto } from "./redux/actions"
 import axios from "axios";
 import "./App.css";
 
@@ -15,15 +17,25 @@ function App() {
   };
 
   useEffect(hook, []);
-  return(
+
+  const SaveToRedux = () => {
+    useDispatch(addPhoto(photo))
+  }
+
+  return (
     <div className="App">
-      {(photo == null)
-          ? <div> Loading </div> 
-          : <div> <h1>{photo[0].title}</h1>
-        <img src={photo[0].url} />
-        <p>{photo[0].explanation}</p> 
-      <button onClick={hook}>pic</button>
-      </div>}
+      {photo == null ? (
+        <div> Loading </div>
+      ) : (
+        <div>
+          {" "}
+          <h1>{photo[0].title}</h1>
+          <img src={photo[0].url} />
+          <p>{photo[0].explanation}</p>
+          <button onClick={hook}>pic</button>
+          <button onClick={SaveToRedux}>save to redux</button>
+        </div>
+      )}
     </div>
   );
 }
