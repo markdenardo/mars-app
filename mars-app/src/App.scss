@@ -1,30 +1,39 @@
+$base-color: cyan;
+$light-color: lighten($base-color, 20%);
+$dark-color: darken($base-color, 35%);
+
 .App {
-  background-color: darkgray;
   .base {
-    background-color: cyan;
-    height: 100%;
+    background-color: $base-color;
+    height: 25%;
     display: flex;
     flex-direction: column;
     font-family: monospace;
     text-align: center;
-    align-items: center;  
+    align-items: center;
 
     .title {
       font-family: "Courier New", Courier, monospace;
       font-size: 50px;
+      &:hover {
+        background-color: $dark-color;
+        color: $light-color;
+      }
     }
 
-    .img{
-      width: 100%
-    }
+    .img {
+      width: 20%;
     
+    }
+
     .explanation {
-      padding: 5%;
+      padding: 3%;
       font-size: 14px;
-      color:darkmagenta;
+      color: darkmagenta;
     }
     .button {
-      width: 20%;
+      margin-bottom: 1%;
+      width: 10%;
     }
   }
 }

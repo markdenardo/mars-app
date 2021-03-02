@@ -1,39 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addPhoto } from "./redux/actions"
+import { addPhoto } from "./redux/actions";
 import axios from "axios";
 import styles from "./App.scss";
+import ContentCard from "./containers/ContentCard";
 
 function App() {
-  const [photo, setPhoto] = useState();
+  const [content, setContent] = useState();
 
   const hook = () => {
     axios
-      .get("https://api.nasa.gov/planetary/apod?api_key=x093fwocm05tLMOCe53njaCSzzbwMk9VG85yW18J&count=1")
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=x093fwocm05tLMOCe53njaCSzzbwMk9VG85yW18J&count=1"
+      )
       .then((response) => {
-        setPhoto(response.data); 
+        setContent(response.data);
         // debugger
       });
+  };
+  const SaveToRedux = () => {
+    let add = addPhoto(content);
+    useDispatch(add);
+    // console.log("clicked")
   };
 
   useEffect(hook, []);
 
-  const SaveToRedux = () => {
-    useDispatch(addPhoto(photo))
-  }
-
+  
   return (
+  
     <div className="App">
-      {photo == null ? (
+      {content == null ? (
         <div> Loading </div>
       ) : (
         <div className="base">
+          {console.log(content)}
           {" "}
-          <h1 className="title">{photo[0].title}</h1>
-          <img className="img" src={photo[0].url} />
-          <p className="explanation">{photo[0].explanation}</p>
+          {/* <ContentCard 
+            title={content[0].title}
+            src={content[0].url}
+            explanation={content[0].explanation}
+          /> */}
+        
+          <h1 className="title">{content[0].title}</h1>
+          <img className="img" src={content[0].url} />
+          <p className="explanation">{content[0].explanation}</p>
           <button className ="button" onClick={hook}>pic</button>
-          <button className ="button" onClick={SaveToRedux}>save to redux</button>
+          <button className ="button"onClick={SaveToRedux}>save to redux</button>
         </div>
       )}
     </div>
