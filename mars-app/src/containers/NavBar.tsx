@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
 import styles from "./NavBar.module.scss";  
+import { NavLink } from "react-router-dom";
+
 
 export interface NavBarProps {
   className: string;

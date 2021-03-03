@@ -10,6 +10,9 @@ import photoReducer from "./redux/reducer";
 import { Provider } from "react-redux";
 
 import NavBar from "./containers/NavBar"
+import ContentCard from "./containers/ContentCard";
+
+import api from "./data/api"
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -23,9 +26,9 @@ ReactDOM.render(
     <Provider store={store}>
       <NavBar />
       <div className="app-container">
-        <App className="App" />
-        <App className="App" />
-        {/* <App className="App" /> */}
+        <App/>
+        <ContentCard/>
+      
       </div>
     </Provider>
   </React.StrictMode>,
