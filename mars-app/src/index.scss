@@ -13,7 +13,6 @@
 // }
 
 .app-container{
-  .App{
-    size: 10%;
-  }
+  display: flex;
+  flex-flow: row;
 }

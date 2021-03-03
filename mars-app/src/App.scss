@@ -11,10 +11,11 @@ $dark-color: darken($base-color, 35%);
     font-family: monospace;
     text-align: center;
     align-items: center;
+    max-width: 50%;
 
     .title {
       font-family: "Courier New", Courier, monospace;
-      font-size: 50px;
+      font-size: 100%;
       &:hover {
         background-color: $dark-color;
         color: $light-color;
@@ -22,7 +23,7 @@ $dark-color: darken($base-color, 35%);
     }
 
     .img {
-      width: 20%;
+      width: 100%;
     
     }
 

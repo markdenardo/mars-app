@@ -10,7 +10,7 @@ const NavBar: FC<NavBarProps> = ({ className }) => {
       <div className={styles.base}>
         <h1 className={styles.h1}>
           <img className={styles.img}/>
-          <h4 className={styles.search}></h4>
+          {/* <h4 className={styles.search}>something</h4> */}
         </h1>
       </div>
     );

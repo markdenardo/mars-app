@@ -21,11 +21,11 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <NavBar/>
+      <NavBar />
       <div className="app-container">
-      <App className="App"/>
-      <App className="App"/>
-      <App className="App"/>
+        <App className="App" />
+        <App className="App" />
+        {/* <App className="App" /> */}
       </div>
     </Provider>
   </React.StrictMode>,

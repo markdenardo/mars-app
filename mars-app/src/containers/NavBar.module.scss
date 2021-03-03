@@ -2,9 +2,18 @@
     font-family:'Courier New', Courier, monospace ;
     background-color: #0B3D91;
     
+
     .h1{
+    padding-top: 5%;
+    height: 300px;
     display: flex;
-    background-image: url('/public/NASA_circle_blue.png.crdownload')
-  
+    flex-flow: row;
+    
+    .img{
+    padding: 20%;
+    background-image: url('/public/NASA_circle_blue.png.crdownload');
+    background-size: 20% ;
+    background-repeat: no-repeat;
+    }
     }
 }
