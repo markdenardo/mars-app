@@ -1,5 +1,4 @@
 import React, { FC, useState, useEffect } from "react";
-import styles from "./ContentCard.module.scss";
 // import axios from 'axios';
 export interface ContentCardProps {
   className: string;

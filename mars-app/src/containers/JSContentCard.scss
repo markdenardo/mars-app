@@ -10,13 +10,12 @@ $dark-color: darken($base-color, 35%);
     height: 25%;
     display: flex;
     flex-direction: column;
-    font-family: monospace;
+    font-family:Arial, Helvetica, sans-serif;
     text-align: center;
     align-items: center;
     max-width: 50%;
 
     .title {
-      font-family: "Courier New", Courier, monospace;
       font-size: 200%;
       &:hover {
         background-color: $dark-color;

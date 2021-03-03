@@ -9,11 +9,6 @@ import thunk from "redux-thunk";
 import photoReducer from "./redux/reducer";
 import { Provider } from "react-redux";
 
-import NavBar from "./containers/NavBar"
-import ContentCard from "./containers/ContentCard";
-
-import api from "./data/api"
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
@@ -24,7 +19,6 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <NavBar />
       <div className="base">
         <App/>
       </div>

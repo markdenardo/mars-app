@@ -1,11 +1,9 @@
-$base-color: cyan;
-$light-color: lighten($base-color, 20%);
-$dark-color: darken($base-color, 35%);
 
 .App {
   .app-container{
     display: flex;
     flex-direction: row;
+    padding: 2%
   }
   // .base {
   //   background-color: $base-color;
