@@ -25,10 +25,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <NavBar />
-      <div className="app-container">
+      <div className="base">
         <App/>
-        <ContentCard/>
-      
       </div>
     </Provider>
   </React.StrictMode>,

@@ -1,8 +1,6 @@
-$base-color: #FC3D21;
+   $base-color: cyan;
 $light-color: lighten($base-color, 20%);
-.app-container{
-  padding: 5%;
-  background-color: $light-color;
-  display: flex;
-  flex-flow: row;
+$dark-color: darken($base-color, 35%);
+.base{
+    // background-color: $base-color;
 }
