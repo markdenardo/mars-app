@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-// import axios from 'axios';
+import axios from 'axios';
 export interface ContentCardProps {
   className: string;
   content: {
@@ -21,16 +21,29 @@ const ContentCard: FC<ContentCardProps> = ({
   // const { explanation, title, url } = content;
   const [content, setContent] = useState({title: "",url: "",explanation: ""});
 
-  const hook = () => {
-    const dummyContent = {
-      title: "Cosmic Latte",
-      url: "https://apod.nasa.gov/apod/image/0207/cosmiclatte_jhu.jpg",
-      explanation:
-        "What color is the universe? More precisely, if the entire sky was smeared out, what color would the final mix be? This whimsical question came up when trying to determine what stars are commonplace in nearby galaxies. The answer, depicted above, is a conditionally perceived shade of beige. To determine this, astronomers computationally averaged the light emitted by one of the largest sample of galaxies yet analyzed: the 200,000 galaxies of the 2dF survey. The resulting cosmic spectrum has some emission in all parts of the electromagnetic spectrum, but a single perceived composite color. This color has become much less blue over the past 10 billion years, indicating that redder stars are becoming more prevalent. In a contest to better name the color, notable entries included skyvory, univeige, and the winner: cosmic latte.",
-    };
+  // const hook = () => {
+  //   const dummyContent = {
+  //     title: "Cosmic Latte",
+  //     url: "https://apod.nasa.gov/apod/image/0207/cosmiclatte_jhu.jpg",
+  //     explanation:
+  //       "What color is the universe? More precisely, if the entire sky was smeared out, what color would the final mix be? This whimsical question came up when trying to determine what stars are commonplace in nearby galaxies. The answer, depicted above, is a conditionally perceived shade of beige. To determine this, astronomers computationally averaged the light emitted by one of the largest sample of galaxies yet analyzed: the 200,000 galaxies of the 2dF survey. The resulting cosmic spectrum has some emission in all parts of the electromagnetic spectrum, but a single perceived composite color. This color has become much less blue over the past 10 billion years, indicating that redder stars are becoming more prevalent. In a contest to better name the color, notable entries included skyvory, univeige, and the winner: cosmic latte.",
+  //   };
 
-    setContent(dummyContent);
+  //   setContent(dummyContent);
+  // };
+
+  const hook = () =>{
+     axios
+        .get(
+          "https://api.nasa.gov/planetary/apod?api_key=x093fwocm05tLMOCe53njaCSzzbwMk9VG85yW18J&count=1"
+        )
+        .then((response) => {
+          setContent(response.data[0])
+         
+        })
+    .catch((error)=>{console.log(error)})
   };
+  
   const SaveToRedux = () => {
     // let add = addPhoto(content);
     // useDispatch(add);

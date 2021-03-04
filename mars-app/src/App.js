@@ -4,11 +4,12 @@ import ContentCard from "./containers/ContentCard";
 import JSContentCard from "./containers/JSContentCard";
 import NavBar from './containers/NavBar'
 
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <div className="app-container">
         <JSContentCard />
         <ContentCard />
