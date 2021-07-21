@@ -6,7 +6,7 @@ export default {
   component: Card,
 };
 
-export const mockData = {
+ const mockData = {
   title: "A Picture",
   url: "https://picsum.photos/id/237/750/600",
   copyright: "Joe",
@@ -16,6 +16,6 @@ export const mockData = {
 const Template: FC<CardProps> = args => <Card {...args}/> 
 
 export const CardLight = Template.bind({});
-CardLight.args={
+CardLight.args = {
     article: mockData
 };

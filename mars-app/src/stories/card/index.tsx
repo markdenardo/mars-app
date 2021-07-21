@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import styles from "./Card.module.scss";
-import Api from "../../data/api";
+// import Api from "../../data/api";
 
 export interface CardProps {
   className?: string;
