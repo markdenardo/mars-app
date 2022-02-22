@@ -1,0 +1,41 @@
+
+.App {
+  .app-container{
+    display: flex;
+    flex-direction: row;
+    padding: 2%
+  }
+  // .base {
+  //   background-color: $base-color;
+  //   height: 25%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   font-family: monospace;
+  //   text-align: center;
+  //   align-items: center;
+  //   max-width: 50%;
+
+  //   &::title {
+  //     font-family: "Courier New", Courier, monospace;
+  //     font-size: 50px;
+  //     &:hover {
+  //       background-color: $dark-color;
+  //       color: $light-color;
+  //     }
+  //   }
+
+  //   .img {
+  //     width: 100%;
+  //   }
+
+  //   .explanation {
+  //     padding: 3%;
+  //     font-size: 16px;
+  //     color: darkmagenta;
+  //   }
+  //   .button {
+  //     margin-bottom: 1%;
+  //     width: 100px;
+  //   }
+  // }
+}
